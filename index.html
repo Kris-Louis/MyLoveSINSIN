@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From your SUITOR</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f8f8f8 url('i.jpg') center/cover;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1, h2 {
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 5rem;
+            color: #ff0000;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        h2 {
+            font-size: 4rem;
+            color: #ff0000;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        .button-container{
+            margin-top: 20px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-size: 1.5rem;
+            background-color: #ff0000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #cc0000;
+        }
+
+        .image-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 999;
+        }
+
+        .image-popup {
+            max-width: 80%;
+            max-height: 80%;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: transparent;
+            color: #fff;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .image-text {
+            color: #fff;
+            font-size: 2rem;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>I LOVE YOU</h1>
+        <h2>SINSIN</h2>
+        <h2>PWEDE KA PANGALUYAG?</h2>
+        <div class="button-container">
+            <button class="button" onclick="openImage('k2.jpg')">Yes</button>  
+            <button class="button" onclick="openImage('k2.jpg')">No</button>
+        </div>
+    </div>
+
+    <div class="image-container" id="imageContainer" style="display: none;">
+        <button class="close-button" onclick="closeImage()">X</button>
+        <img src="" alt="" class="image-popup" id="popupImage">
+        <p class="image-text">Thank You for Accepting My Love For You</p>
+    </div>
+
+    <div class="image-container" id="imageContainer" style="display: none;">
+        <button class="close-button" onclick="closeImage()">X</button>
+        <img src="" alt="" class="image-popup" id="popupImage">
+        <p class="image-text">YES Parin kahit NO haha</p>
+    </div>
+
+    <script>
+        function openImage(imageSrc) {
+            const imageContainer = document.getElementById('imageContainer');
+            const popupImage = document.getElementById('popupImage');
+
+            popupImage.src = imageSrc;
+            imageContainer.style.display = 'flex';
+        }
+
+        function closeImage() {
+            const imageContainer = document.getElementById('imageContainer');
+            imageContainer.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
+
+
+
